@@ -25,7 +25,7 @@ namespace Evalua
                 throw new Error("Error de sintaxis, se espera un " +espera+" en linea: "+linea, log);
             }
         }
-//lksjdfsjkdlf
+
         public void match(Tipos espera)
         {
             if (espera == getClasificacion())

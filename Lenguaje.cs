@@ -4,6 +4,7 @@ using System;
 //                  dentro de la cadena
 //Requerimiento 2.- Marcar los errores sintaxicos cuando la variable no exista 
 // Modificar el valor de la variable en el metodo asignación
+//Requerimiento 3 
 
 namespace Evalua
 {
@@ -353,9 +354,8 @@ namespace Evalua
         private void Printf()
         {
             match("printf");
-            match("(");
-            Console.Write(getContenido());
-            match(Tipos.Cadena);
+            match("("); 
+            match(Tipos.Cadena); 
             match(")");
             match(";");
         }

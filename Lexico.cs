@@ -168,7 +168,7 @@ namespace Evalua
         }
         private int columna(char c)
         {
-            //WS,EF,EL,L, D, .,	E, +, -, =,	:, ;, &, |,	!, >, <, *,	%, /, ", ?,La
+            //WS,EF,EL,L, D, .,	E, +, -, =,	:, ;, &, |,	!, >, <, *,	%, /, ", ?,La, \
             if(FinArchivo())
             {
                 return 1;
@@ -273,7 +273,6 @@ namespace Evalua
             string buffer = "";           
             char c;      
             int estado = 0;
-
             while(estado >= 0)
             {
                 c = (char)archivo.Peek(); //Funcion de transicion
@@ -282,10 +281,6 @@ namespace Evalua
                 if (estado >= 0)
                 {
                     archivo.Read();
-                    if(c == '\n')
-                    {
-                        linea++;
-                    }
                     if (estado >0)
                     {
                         buffer += c;
@@ -320,6 +315,12 @@ namespace Evalua
                         setClasificacion(Tipos.Ciclo);
                         break;
             }
+            if(Tipos.Cadena == getClasificacion()) //Requerimiento 1
+            {
+                setContenido(getContenido().Replace("\\t", "    "));
+                setContenido(getContenido().Replace("\\n", "\n"));
+                setContenido(getContenido().Replace("\"", string.Empty));
+            } 
             if(estado == E)
             {
                 //Requerimiento 9 agregar el numero de linea en el error
@@ -342,7 +343,7 @@ namespace Evalua
             }
             else if (!FinArchivo())
             {
-                //log.WriteLine(getContenido() + " | " + getClasificacion());
+                log.WriteLine(getContenido() + " | " + getClasificacion());
             }
         }
 
