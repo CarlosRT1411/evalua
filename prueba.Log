@@ -1,5 +1,13 @@
 Primer constructor
 Archivo: prueba.cpp
-07/09/2022 09:48:51 a. m.
+07/09/2022 04:17:36 p. m.
 
-= = 3 5 + 8 * 10 4 - 2 / -  = NaN
+= = 5  = 5
+x = 5
+
+= = 3 5 + 8 * 4 - 2 / -  = 66
+a = 66
+x : Int
+
+a : Int
+

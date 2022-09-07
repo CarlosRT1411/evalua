@@ -1,10 +1,9 @@
 using System;
 
 //Requerimiento 1.- Eliminar las dobles comillas del printf e interpretar las secuencias de escape 
-//                  dentro de la cadena
-//Requerimiento 2.- Marcar los errores sintaxicos cuando la variable no exista 
-// Modificar el valor de la variable en el metodo asignación
-//Requerimiento 3.- Modificar el valor de la variable en la asignación
+//                  dentro de la cadena V
+//Requerimiento 2.- Marcar los errores sintaxicos cuando la variable no exista V
+//Requerimiento 3.- Modificar el valor de la variable en la asignación V
 //Requerimiento 4.- Obtener el valor de la variable cuando se requiera y programar el metodo getValor() 
 
 namespace Evalua
@@ -46,7 +45,12 @@ namespace Evalua
         }
         private void modVariable(string nombre, float nuevoValor)
         {
-            
+            Console.WriteLine("nombre" + nombre + " valor" + nuevoValor);
+            foreach (var v in variables)   
+            {   
+                if (v.getNombre() == nombre)  
+                    v.setValor(nuevoValor); 
+            }
         }
         private bool existeVariable(string nombre){
             foreach (Variable v in variables)
@@ -191,11 +195,13 @@ namespace Evalua
         //Asignacion -> identificador = cadena | Expresion;
         private void Asignacion()
         {
+            string nombre = getContenido(); 
+            if(!existeVariable(getContenido()))
+                    throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+linea, log);
             match(Tipos.Identificador); 
             //Requerimiento 2 sino existe la variable levantar excepcion
             log.WriteLine();
             log.Write(getContenido() + " = ");
-            string nombre = getContenido(); 
             match(Tipos.Asignacion);
             Expresion();
             match(";");
@@ -265,6 +271,8 @@ namespace Evalua
         {
             string Variable = getContenido();
             //Requerimiento 2 sino existe la variable levantar excepcion
+            if(!existeVariable(getContenido()))
+                    throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+linea, log);
             match(Tipos.Identificador);
             if(getContenido() == "+")
             {
@@ -393,6 +401,8 @@ namespace Evalua
             {
                 match(",");
                 match("&");
+                if(!existeVariable(getContenido()))
+                    throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+linea, log);
                 match(Tipos.Identificador);
             }
             match(")");
@@ -471,12 +481,17 @@ namespace Evalua
             if (getClasificacion() == Tipos.Numero)
             {
                 log.Write(getContenido() + " " );
-                stack.Push(getValor(getContenido()));
+                stack.Push(float.Parse(getContenido()));
                 match(Tipos.Numero);
             }
             else if (getClasificacion() == Tipos.Identificador)
             {
                 //Requerimiento 2 sino existe la variable levantar excepcion
+                //if(!existeVariable(getContenido()))
+                    //throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+linea, log);
+                stack.Push(getValor(getContenido()));
+                if(!existeVariable(getContenido()))
+                    throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+linea, log);
                 match(Tipos.Identificador);
             }
             else
