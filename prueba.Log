@@ -1,38 +1,5 @@
 Primer constructor
 Archivo: prueba.cpp
-04/09/2022 05:32:28 p. m.
-# | Caracter
-include | Identificador
-< | OperadorRelacional
-iostream | Identificador
-. | Caracter
-h | Identificador
-> | OperadorRelacional
-# | Caracter
-include | Identificador
-< | OperadorRelacional
-stdio | Identificador
-. | Caracter
-h | Identificador
-> | OperadorRelacional
-# | Caracter
-include | Identificador
-< | OperadorRelacional
-conio | Identificador
-. | Caracter
-h | Identificador
-> | OperadorRelacional
-float | TipoDato
-resultado | Identificador
-; | FinSentencia
-int | TipoDato
-a | Identificador
-, | Caracter
-b | Identificador
-, | Caracter
-c | Identificador
-, | Caracter
-d | Identificador
-, | Caracter
-a | Identificador
-Error de sintaxis, variable duplicada <a> en linea: 5
+05/09/2022 09:54:39 a. m.
+
+= = 3 5 + 8 * 10 4 - 2 / - = 61

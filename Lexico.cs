@@ -342,7 +342,7 @@ namespace Evalua
             }
             else if (!FinArchivo())
             {
-                log.WriteLine(getContenido() + " | " + getClasificacion());
+                //log.WriteLine(getContenido() + " | " + getClasificacion());
             }
         }
 

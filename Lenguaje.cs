@@ -3,12 +3,14 @@ using System;
 //Requerimiento 1.- Eliminar las dobles comillas del printf e interpretar las secuencias de escape 
 //                  dentro de la cadena
 //Requerimiento 2.- Marcar los errores sintaxicos cuando la variable no exista 
+// Modificar el valor de la variable en el metodo asignación
 
 namespace Evalua
 {
     public class Lenguaje : Sintaxis
     {
         List<Variable> variables = new List<Variable>();
+        Stack<float> stack = new Stack<float>();
         public Lenguaje()
         {
 
@@ -35,6 +37,10 @@ namespace Evalua
             Variables();
             Main();
             displayVariables();
+        }
+        private void modVariable(string nombre, float nuevoValor)
+        {
+            
         }
         private bool existeVariable(string nombre){
             foreach (Variable v in variables)
@@ -181,10 +187,17 @@ namespace Evalua
         {
             match(Tipos.Identificador); 
             //Requerimiento 2 sino existe la variable levantar excepcion
+            log.WriteLine();
+            log.Write(getContenido() + " = ");
+            string nombre = getContenido(); 
             match(Tipos.Asignacion);
             Expresion();
             match(";");
-        }
+            float resultado = stack.Pop();
+            log.Write(" = " + resultado);
+            log.WriteLine();
+            modVariable(nombre, resultado); 
+        } 
 
         //While -> while(Condicion) bloque de instrucciones | instruccion
         private void While()
@@ -334,7 +347,7 @@ namespace Evalua
                     Instruccion();
                 }
             }
-        }//a
+        }
 
         //Printf -> printf(cadena);
         private void Printf()
@@ -378,8 +391,21 @@ namespace Evalua
         {
             if (getClasificacion() == Tipos.OperadorTermino)
             {
+                string operador = getContenido();
                 match(Tipos.OperadorTermino);
                 Termino();
+                log.Write(operador + " ");
+                float n1 = stack.Pop();
+                float n2 = stack.Pop();
+                switch(operador)
+                {
+                    case "+":
+                        stack.Push(n2 + n1);
+                        break;
+                    case "-":
+                        stack.Push(n2 - n1);
+                        break;
+                }
             }
         }
         //Termino -> Factor PorFactor
@@ -393,8 +419,21 @@ namespace Evalua
         {
             if (getClasificacion() == Tipos.OperadorFactor)
             {
+                string operador = getContenido();
                 match(Tipos.OperadorFactor);
                 Factor();
+                log.Write(operador + " ");
+                float n1 = stack.Pop();
+                float n2 = stack.Pop();
+                switch(operador)
+                {
+                    case "*":
+                        stack.Push(n2 * n1);
+                        break;
+                    case "/":
+                        stack.Push(n2 / n1);
+                        break;
+                }
             }
         }
         //Factor -> numero | identificador | (Expresion)
@@ -402,6 +441,8 @@ namespace Evalua
         {
             if (getClasificacion() == Tipos.Numero)
             {
+                log.Write(getContenido() + " " );
+                stack.Push(float.Parse(getContenido()));
                 match(Tipos.Numero);
             }
             else if (getClasificacion() == Tipos.Identificador)
