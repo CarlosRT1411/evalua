@@ -1,5 +1,7 @@
 int x, a;
 void main() {
-    x = 5;
-    a = (3+5)*8-(x-4)/2;
+    a = 26;
+    x = 26;
+    printf(a + x);
+    printf("Veamos\tIntento\na");
 }

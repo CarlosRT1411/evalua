@@ -4,7 +4,7 @@ using System;
 //                  dentro de la cadena V
 //Requerimiento 2.- Marcar los errores sintaxicos cuando la variable no exista V
 //Requerimiento 3.- Modificar el valor de la variable en la asignación V
-//Requerimiento 4.- Obtener el valor de la variable cuando se requiera y programar el metodo getValor() 
+//Requerimiento 4.- Obtener el valor de la variable cuando se requiera y programar el metodo getValor() V
 
 namespace Evalua
 {
@@ -33,6 +33,9 @@ namespace Evalua
         }
         private float getValor(string nombre)
         {
+            foreach (Variable v in variables)  
+                if (v.getNombre().Equals(nombre)) 
+                    return v.getValor(); 
             return 0;
         }
         //Programa  -> Librerias? Variables? Main
@@ -45,12 +48,9 @@ namespace Evalua
         }
         private void modVariable(string nombre, float nuevoValor)
         {
-            Console.WriteLine("nombre" + nombre + " valor" + nuevoValor);
             foreach (var v in variables)   
-            {   
                 if (v.getNombre() == nombre)  
                     v.setValor(nuevoValor); 
-            }
         }
         private bool existeVariable(string nombre){
             foreach (Variable v in variables)
@@ -487,8 +487,6 @@ namespace Evalua
             else if (getClasificacion() == Tipos.Identificador)
             {
                 //Requerimiento 2 sino existe la variable levantar excepcion
-                //if(!existeVariable(getContenido()))
-                    //throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+linea, log);
                 stack.Push(getValor(getContenido()));
                 if(!existeVariable(getContenido()))
                     throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+linea, log);

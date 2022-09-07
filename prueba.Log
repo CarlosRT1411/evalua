@@ -1,13 +1,11 @@
 Primer constructor
 Archivo: prueba.cpp
-07/09/2022 04:17:36 p. m.
+07/09/2022 04:44:21 p. m.
 
-= = 5  = 5
-x = 5
+= = 26  = 26
 
-= = 3 5 + 8 * 4 - 2 / -  = 66
-a = 66
-x : Int
+= = 26  = 26
++ x : Int
 
 a : Int
 
