@@ -315,12 +315,6 @@ namespace Evalua
                         setClasificacion(Tipos.Ciclo);
                         break;
             }
-            if(Tipos.Cadena == getClasificacion()) //Requerimiento 1
-            {
-                setContenido(getContenido().Replace("\\t", "    "));
-                setContenido(getContenido().Replace("\\n", "\n"));
-                setContenido(getContenido().Replace("\"", string.Empty));
-            } 
             if(estado == E)
             {
                 //Requerimiento 9 agregar el numero de linea en el error
@@ -343,7 +337,7 @@ namespace Evalua
             }
             else if (!FinArchivo())
             {
-                log.WriteLine(getContenido() + " | " + getClasificacion());
+                //log.WriteLine(getContenido() + " | " + getClasificacion());
             }
         }
 

@@ -1,19 +1,5 @@
 Primer constructor
 Archivo: prueba.cpp
-06/09/2022 10:54:09 p. m.
-void | Identificador
-main | Identificador
-( | Caracter
-) | Caracter
-{ | Caracter
-printf | Identificador
-( | Caracter
-Probando 
- | Cadena
-) | Caracter
-; | FinSentencia
-printf | Identificador
-( | Caracter
-Veamos si      sirve  | Cadena
-) | Caracter
-; | FinSentencia
+07/09/2022 09:48:51 a. m.
+
+= = 3 5 + 8 * 10 4 - 2 / -  = NaN

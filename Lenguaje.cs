@@ -4,7 +4,8 @@ using System;
 //                  dentro de la cadena
 //Requerimiento 2.- Marcar los errores sintaxicos cuando la variable no exista 
 // Modificar el valor de la variable en el metodo asignación
-//Requerimiento 3 
+//Requerimiento 3.- Modificar el valor de la variable en la asignación
+//Requerimiento 4.- Obtener el valor de la variable cuando se requiera y programar el metodo getValor() 
 
 namespace Evalua
 {
@@ -30,6 +31,10 @@ namespace Evalua
             {
                 log.WriteLine(v.getNombre() + " : " + v.getTipoDato() + "\n");    
             }
+        }
+        private float getValor(string nombre)
+        {
+            return 0;
         }
         //Programa  -> Librerias? Variables? Main
         public void Programa()
@@ -258,14 +263,17 @@ namespace Evalua
         //Incremento -> Identificador ++ | --
         private void Incremento()
         {
+            string Variable = getContenido();
             //Requerimiento 2 sino existe la variable levantar excepcion
             match(Tipos.Identificador);
             if(getContenido() == "+")
             {
+                modVariable(Variable, getValor(Variable)+1);
                 match("++");
             }
             else
             {
+                modVariable(Variable, getValor(Variable)-1);
                 match("--");
             }
         }
@@ -276,6 +284,7 @@ namespace Evalua
             match("switch");
             match("(");
             Expresion();
+            stack.Pop();
             match(")");
             match("{");
             ListaDeCasos();
@@ -300,6 +309,7 @@ namespace Evalua
         {
             match("case");
             Expresion();
+            stack.Pop();
             match(":");
             ListaInstruccionesCase();
             if(getContenido() == "break")
@@ -317,6 +327,7 @@ namespace Evalua
         private void Condicion()
         {
             Expresion();
+            stack.Pop();
             match(Tipos.OperadorRelacional);
             Expresion();
         }
@@ -350,22 +361,40 @@ namespace Evalua
             }
         }
 
-        //Printf -> printf(cadena);
+        //Printf -> printf(cadena|expresion);
         private void Printf()
         {
             match("printf");
             match("("); 
-            match(Tipos.Cadena); 
+            if(getClasificacion() == Tipos.Cadena) 
+            {
+                setContenido(getContenido().Replace("\\t", "    "));
+                setContenido(getContenido().Replace("\\n", "\n"));
+                setContenido(getContenido().Replace("\"", string.Empty));
+                Console.Write(getContenido());
+                match(Tipos.Cadena);
+            }
+            else
+            {
+                Expresion();
+                Console.Write(stack.Pop());
+            }
             match(")");
             match(";");
         }
 
-        //Scanf -> scanf(cadena);
+        //Scanf -> scanf(cadena,&identificador);
         private void Scanf()    
         {
             match("scanf");
             match("(");
             match(Tipos.Cadena);
+            if(getContenido() == ",")
+            {
+                match(",");
+                match("&");
+                match(Tipos.Identificador);
+            }
             match(")");
             match(";");
         }
@@ -442,7 +471,7 @@ namespace Evalua
             if (getClasificacion() == Tipos.Numero)
             {
                 log.Write(getContenido() + " " );
-                stack.Push(float.Parse(getContenido()));
+                stack.Push(getValor(getContenido()));
                 match(Tipos.Numero);
             }
             else if (getClasificacion() == Tipos.Identificador)

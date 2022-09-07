@@ -1,4 +1,3 @@
 void main() {
-    printf("Probando \n");
-    printf("Veamos si \t sirve ");
+    a = (3+5)*8-(10-4)/2;
 }
