@@ -199,7 +199,7 @@ namespace Evalua
         {
             string nombre = getContenido(); 
             if(!existeVariable(getContenido()))
-                    throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+linea, log);
+                throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+ linea, log);
             match(Tipos.Identificador); 
             //Requerimiento 2 sino existe la variable levantar excepcion
             log.WriteLine();
