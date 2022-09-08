@@ -1,7 +1,13 @@
-int x, a;
+#include<iostream>
+#include<stdio.h>
+#include<stdlib.h>
+float area, radio, PI;
 void main() {
-    a = 26;
-    x = 26;
-    printf(a + x);
-    printf("Veamos\tIntento\na");
+    printf(c);
+    printf("\nRadio: ");
+    scanf("%d",&radio);
+    PI = 3.14159265;
+    area = PI * (radio * radio);   
+    printf("Area: ");
+    printf(area);  
 }

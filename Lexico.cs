@@ -281,6 +281,10 @@ namespace Evalua
                 if (estado >= 0)
                 {
                     archivo.Read();
+                    if(c == '\n')
+                    {   
+                        linea++;
+                    }
                     if (estado >0)
                     {
                         buffer += c;
