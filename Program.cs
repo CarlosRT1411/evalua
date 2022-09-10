@@ -13,10 +13,10 @@ namespace Evalua
 
                 a.Programa();
 
-                //while(!a.FinArchivo())
-                //{
-                  //  a.NextToken();
-                //}
+                /*while(!a.FinArchivo())
+                {
+                    a.NextToken();
+                }*/
 
                 a.cerrar();
             }

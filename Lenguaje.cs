@@ -54,7 +54,8 @@ namespace Evalua
                 if (v.getNombre() == nombre)  
                     v.setValor(nuevoValor); 
         }
-        private bool existeVariable(string nombre){
+        private bool existeVariable(string nombre)
+        {
             foreach (Variable v in variables)
             {
                 if (v.getNombre().Equals(nombre))
@@ -114,7 +115,8 @@ namespace Evalua
                 if(!existeVariable(getContenido()))
                 {
                     addVariable(getContenido(), tipo);
-                }else
+                }
+                else
                 {
                     throw new Error("Error de sintaxis, variable duplicada <" +getContenido()+"> en linea: "+linea, log);
                 }
@@ -220,7 +222,7 @@ namespace Evalua
             match("(");
             Condicion();
             match(")");
-             if (getContenido() == "{") 
+            if (getContenido() == "{") 
             {
                 BloqueInstrucciones();
             }
@@ -274,9 +276,9 @@ namespace Evalua
             string Variable = getContenido();
             //Requerimiento 2 sino existe la variable levantar excepcion
             if(!existeVariable(getContenido()))
-                    throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+linea, log);
+                throw new Error("Error: No existe la variable " + getContenido() + " en linea: "+linea, log);
             match(Tipos.Identificador);
-            if(getContenido() == "+")
+            if(getContenido() == "++")
             {
                 modVariable(Variable, getValor(Variable)+1);
                 match("++");

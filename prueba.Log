@@ -1,19 +1,23 @@
 Primer constructor
 Archivo: prueba.cpp
-08/09/2022 06:42:11 p. m.
+10/09/2022 03:39:23 p. m.
 
-= = 3.14159265  = 3.1415927
+= = 3.141592653589793  = 3.1415927
 
-= = * *  = 78.53982
-a : Int
+= = 4  = 4
 
-b : Int
+= = * *  = 12.566371
 
-c : Int
-
-area : Float
+= = 10  = 10
+20 area : Float
 
 radio : Float
 
-PI : Float
+pi : Float
+
+resultado : Float
+
+a : Int
+
+d : Int
 
