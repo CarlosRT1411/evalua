@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace Evalua
+namespace Semantica
 {
     public class Lexico : Token
     {

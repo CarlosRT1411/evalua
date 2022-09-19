@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Evalua
+namespace Semantica
 {
     public class Program
     {
@@ -20,9 +20,9 @@ namespace Evalua
 
                 a.cerrar();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                
+                Console.WriteLine(e.Message);
             }
         }
     }

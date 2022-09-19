@@ -1,23 +1,4 @@
 Primer constructor
 Archivo: prueba.cpp
-11/09/2022 07:55:14 p. m.
-
-= = 3.141592653589793  = 3.1415927
-
-= = 4  = 4
-
-= = * *  = 78.53982
-
-= = 10  = 10
-20 area : Float
-
-radio : Float
-
-pi : Float
-
-resultado : Float
-
-a : Int
-
-d : Int
-
+19/09/2022 09:30:28 a. m.
+Error de sintaxis, se espera un ; en linea: 10

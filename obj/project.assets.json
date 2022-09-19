@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cex\\Desktop\\Evalua\\Evalua.csproj",
+      "projectUniqueName": "C:\\Users\\cex\\Desktop\\Evalua - copia\\Evalua.csproj",
       "projectName": "Evalua",
-      "projectPath": "C:\\Users\\cex\\Desktop\\Evalua\\Evalua.csproj",
+      "projectPath": "C:\\Users\\cex\\Desktop\\Evalua - copia\\Evalua.csproj",
       "packagesPath": "C:\\Users\\cex\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cex\\Desktop\\Evalua\\obj\\",
+      "outputPath": "C:\\Users\\cex\\Desktop\\Evalua - copia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cex\\AppData\\Roaming\\NuGet\\NuGet.Config"

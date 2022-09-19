@@ -8,7 +8,7 @@ using System;
 //Requerimiento 5.- Modificar el valor de la variable en el scanf V
 
 
-namespace Evalua
+namespace Semantica
 {
     public class Lenguaje : Sintaxis
     {

@@ -13,3 +13,18 @@ C:\Users\cex\Desktop\Evalua\obj\Debug\net6.0\refint\Evalua.dll
 C:\Users\cex\Desktop\Evalua\obj\Debug\net6.0\Evalua.pdb
 C:\Users\cex\Desktop\Evalua\obj\Debug\net6.0\Evalua.genruntimeconfig.cache
 C:\Users\cex\Desktop\Evalua\obj\Debug\net6.0\ref\Evalua.dll
+C:\Users\cex\Desktop\Evalua - copia\bin\Debug\net6.0\Evalua.exe
+C:\Users\cex\Desktop\Evalua - copia\bin\Debug\net6.0\Evalua.deps.json
+C:\Users\cex\Desktop\Evalua - copia\bin\Debug\net6.0\Evalua.runtimeconfig.json
+C:\Users\cex\Desktop\Evalua - copia\bin\Debug\net6.0\Evalua.dll
+C:\Users\cex\Desktop\Evalua - copia\bin\Debug\net6.0\Evalua.pdb
+C:\Users\cex\Desktop\Evalua - copia\obj\Debug\net6.0\Evalua.csproj.AssemblyReference.cache
+C:\Users\cex\Desktop\Evalua - copia\obj\Debug\net6.0\Evalua.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cex\Desktop\Evalua - copia\obj\Debug\net6.0\Evalua.AssemblyInfoInputs.cache
+C:\Users\cex\Desktop\Evalua - copia\obj\Debug\net6.0\Evalua.AssemblyInfo.cs
+C:\Users\cex\Desktop\Evalua - copia\obj\Debug\net6.0\Evalua.csproj.CoreCompileInputs.cache
+C:\Users\cex\Desktop\Evalua - copia\obj\Debug\net6.0\Evalua.dll
+C:\Users\cex\Desktop\Evalua - copia\obj\Debug\net6.0\refint\Evalua.dll
+C:\Users\cex\Desktop\Evalua - copia\obj\Debug\net6.0\Evalua.pdb
+C:\Users\cex\Desktop\Evalua - copia\obj\Debug\net6.0\Evalua.genruntimeconfig.cache
+C:\Users\cex\Desktop\Evalua - copia\obj\Debug\net6.0\ref\Evalua.dll
